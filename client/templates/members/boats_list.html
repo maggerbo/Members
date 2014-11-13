@@ -1,0 +1,42 @@
+<template name="boatsList">
+	<div class="row">
+		<div class="col-md-6 col-xs-7">
+	      {{> esInput index="boats" classes="form-control" placeholder="Søg på medlem eller båd..." reactive="true" }}
+		</div>
+		<div class="col-md-6 col-xs-2">
+			<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus" ></span> Opret medlem</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="table-responsive col-md-12">
+			<table class="table table-striped table-hover table-condensed" data-toggle="table">
+				<thead>
+					<tr>
+						<th>Navn</th>
+						<th>Sejlnummer</th>
+						<th>Hjemhavn</th>
+						<th>Bådtype</th>
+					</tr>
+				</thead>
+				<tbody>
+			{{#ifEsInputIsEmpty index="boats"}}
+			{{#each boats}}
+			  {{> boatItem}}
+			{{/each}}
+			{{/ifEsInputIsEmpty}}
+			{{#ifEsIsSearching index="boats"}}
+			        <div>Loading...</div>
+			    {{else}}
+			        
+			            {{#esEach index="boats"}}
+			                {{> boatItem}}
+			            {{/esEach}}
+			        
+
+			        {{> esLoadMoreButton index="boats"}}
+			    {{/ifEsIsSearching}}
+			</tbody>
+			</table>
+		</div>
+	</div>
+</template>
