@@ -1,4 +1,24 @@
 <template name="boatPage">
 	<h1>{{boatName}}</h1>
 	<h2>{{owner.firstName}}</h2>
+	{{> imageForm}}
+
+	{{> imageView}}
+</template>
+
+<template name="imageForm">
+	<input type="File" class="picture" name="file"/>
+</template>
+
+<template name="imageView">
+  <div class="imageView">
+    {{#each images}}
+    <div class="row">
+      <div class="col-md-6">
+        <a href="{{this.url}}" target="_blank">
+        	<img src="{{this.url}}" alt="" class="thumbnail"/></a>
+      </div>
+    </div>
+    {{/each}}
+  </div>
 </template>

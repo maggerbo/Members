@@ -20,10 +20,14 @@
 		        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		          <ul class="nav navbar-nav">
 		            <li><a href="{{pathFor 'dashboard'}}">Forside</a></li>
+		            {{#if currentUser}}
 		            <li><a href="{{pathFor 'boatsList'}}">Medlemmer</a></li>
+		            {{/if}}
 		            
 		          </ul>
-		          
+		        <ul class="nav navbar-nav navbar-right">
+          			{{> loginButtons}}
+        		</ul>
 		        </div><!-- /.navbar-collapse -->
 		      </div><!-- /.container-fluid -->
 		    </nav>
