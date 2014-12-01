@@ -18,3 +18,11 @@ body {
 		width:100%;
 	}
 }
+.edit-name{
+  display:none;
+  input{
+	border:0;
+	outline: hidden;
+	width:400px;
+  }
+}

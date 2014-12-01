@@ -5,11 +5,17 @@ Template.boatPage.helpers({
 		return owner;
 	}
 })
-
+Template.boatPage.events({
+	"click .boat-name": function(){
+		console.log(this.boatName)
+		$(".edit-name").val(this.boatName);
+		$(".edit-name").show();
+		$(".boat-name").hide();
+	}
+})
 Template.imageForm.events({
 	"change .picture": function(event, template){
-		console.log(Template.boatPage.data)
-		var files = event.target.files;
+
 		FS.Utility.eachFile(event, function(file) {
 		      Images.insert(file, function (err, fileObj) {
 		        Boats.update({_id: template.data._id}, {$set: {boatPic: fileObj._id}})
@@ -26,7 +32,16 @@ Template.imageForm.events({
 
 Template.imageView.helpers({
   images: function () {
-  	console.log(this.boatName)
-    return Images.find({_id:this.boatPic}); // Where Images is an FS.Collection instance
+	  return Images.find({_id:this.boatPic}); // Where Images is an FS.Collection instance
   }
 });
+
+AutoForm.hooks({
+	editBoatName:{
+		onSuccess: function(operation,result,template){
+			console.log(template);
+			$(".edit-name").hide();
+			$(".boat-name").show();
+		}
+	}
+})

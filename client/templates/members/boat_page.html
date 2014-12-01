@@ -1,6 +1,5 @@
 <template name="boatPage">
-	<h1>{{boatName}}</h1>
-	<h2>{{owner.firstName}}</h2>
+	<h1><span class="boat-name">{{boatName}}</span><span class="edit-name">{{> editBoatName}}</span> <small>{{#if owner.firstName}}Eget af {{owner.firstName}}{{/if}}</small></h1>
 	{{> imageForm}}
 
 	{{> imageView}}
@@ -21,4 +20,10 @@
     </div>
     {{/each}}
   </div>
+</template>
+
+<template name="editBoatName">
+    {{#autoForm id="editBoatName" type="update" collection="Boats" doc=this}}
+      {{> afFieldInput name="boatName" label="false"}}
+    {{/autoForm}}
 </template>

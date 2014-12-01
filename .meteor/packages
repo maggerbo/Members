@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-mizzao:bootstrap-3
 underscore
 fourseven:scss
 matteodem:easy-search
@@ -15,4 +14,6 @@ ian:accounts-ui-bootstrap-3
 accounts-password
 cfs:standard-packages
 cfs:filesystem
+rzymek:fullcalendar
+mizzao:bootstrap-3
 
