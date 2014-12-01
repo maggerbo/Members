@@ -8,8 +8,8 @@ Meteor.publish("boats", function(boatId){
 	}
 	
 });
-Meteor.publish("owners", function(){
-	return Owners.find();
+Meteor.publish("members", function(){
+	return Members.find();
 });
 Meteor.publish("images", function(){
 	return Images.find();

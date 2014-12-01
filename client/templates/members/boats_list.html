@@ -1,4 +1,4 @@
-<template name="boatsList">
+	<template name="boatsList">
 	<div class="row">
 		<div class="col-md-6 col-xs-7">
 	      {{> esInput index="boats" class="form-control" placeholder="Søg på medlem eller båd..." reactive="true" }}
@@ -27,11 +27,11 @@
 			{{#ifEsIsSearching index="boats"}}
 			        <div>Søger...</div>
 			    {{else}}
-			        
+
 			            {{#esEach index="boats"}}
 			                {{> boatItem}}
 			            {{/esEach}}
-			        
+
 
 			        {{> esLoadMoreButton index="boats"}}
 			    {{/ifEsIsSearching}}

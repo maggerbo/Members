@@ -5,9 +5,9 @@ Template.boatsList.helpers({
 	}
 })
 Template.boatItem.helpers({
-  owner: function() {
-  	var owner = Owners.findOne(this.owner);
-  	var firstName = owner.firstName;
+  member: function() {
+  	var member = Members.findOne(this.member);
+  	var firstName = member.firstName;
     return firstName;
   }
 });
@@ -17,6 +17,7 @@ Template.boatsList.rendered = function(){
 }
 Template.boatsList.events({
 	"click button": function(){
+		console.log("hallo")
 		$("#new-member-popup").modal();
   	}
 })
