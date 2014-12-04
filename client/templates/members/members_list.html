@@ -1,0 +1,42 @@
+<template name="membersList">
+    <div class="row">
+        <div class="col-md-6 col-xs-7">
+            {{> esInput index="members" class="form-control" placeholder="Søg på medlem" reactive="true" }}
+        </div>
+        <div class="col-md-6 col-xs-2">
+            <button type="button" class="btn btn-primary" data-toggle="tooltip" title="" data-original-title="Klik her" data-placement="right"><span class="glyphicon glyphicon-plus" ></span> Opret medlem</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="table-responsive col-md-12">
+            <table class="table table-striped table-hover table-condensed" data-toggle="table">
+                <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Adresse</th>
+                    <th>Mobilnummer</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#ifEsInputIsEmpty index="members"}}
+                    {{#each members}}
+                        {{> memberItem}}
+                    {{/each}}
+                {{/ifEsInputIsEmpty}}
+                {{#ifEsIsSearching index="members"}}
+                    <div>Søger...</div>
+                {{else}}
+
+                    {{#esEach index="members"}}
+                        {{> memberItem}}
+                    {{/esEach}}
+
+
+                    {{> esLoadMoreButton index="members"}}
+                {{/ifEsIsSearching}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</template>

@@ -1,5 +1,5 @@
-<template name="boatPage">
-	<h1><span class="boat-name">{{boatName}}</span><span class="edit-name">{{> editBoatName}}</span> <small>{{#if owner.firstName}}Eget af {{owner.firstName}}{{/if}}</small></h1>
+<template name="memberPage">
+	<h1><span class="boat-name">{{firstName}} {{lastName}}</span><span class="edit-name">{{> editBoatName}}</span> <small>{{#if owner.firstName}}Eget af {{owner.firstName}}{{/if}}</small></h1>
 	{{> imageForm}}
 
 	{{> imageView}}
@@ -11,14 +11,21 @@
 
 <template name="imageView">
   <div class="imageView">
-    {{#each images}}
+
     <div class="row">
       <div class="col-md-6">
+        {{#if profilePics}}
+        {{#each profilePics}}
         <a href="{{this.url}}" target="_blank">
-        	<img src="{{this.url}}" alt="" class="thumbnail"/></a>
+        	<img src="{{this.url}}" alt="" class="img-circle"/>
+        </a>
+          {{else}}
+          <span class="glyphicon glyphicon-user"></span>
+      {{/each}}
+      {{/if}}
       </div>
     </div>
-    {{/each}}
+
   </div>
 </template>
 

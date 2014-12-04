@@ -1,0 +1,31 @@
+<template name="newMember">
+
+    <div id="new-member-popup" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Luk</span></button>
+                    <h4 class="modal-title">Opret nyt medlem</h4>
+                </div>
+                <div class="modal-body">
+        {{#autoForm id="insertMemberForm" collection="Members" type="insert" role="form"}}
+            {{> afQuickField name='firstName' class="input-sm"}}
+            {{> afQuickField name='lastName' class="input-sm"}}
+            {{> afQuickField name='email' class="input-sm"}}
+            {{> afQuickField name='address' class="input-sm"}}
+            {{> afQuickField name='city' label="false" class="input-sm city"}}
+            {{> afQuickField name='postNo' class="input-sm postNo"}}
+            {{> afQuickField name='country' class="input-sm"}}
+            {{> afQuickField name='phone' class="input-sm"}}
+        {{/autoForm}}
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
+                    <button type="button" class="btn btn-primary saveBtn" data-initial="Opret medlem" data-loading="Opretter... Vent venligst.">Opret medlem</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+</template>

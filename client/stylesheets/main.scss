@@ -15,8 +15,12 @@ body {
 }
 .imageView{
 	img{
-		width:100%;
+		width:100px;
 	}
+  span{
+	font-size:50px;
+
+  }
 }
 .edit-name{
   display:none;
@@ -25,4 +29,10 @@ body {
 	outline: hidden;
 	width:400px;
   }
+}
+
+#new-member-popup{
+	.city, .postNo{
+	  width:50%;
+	}
 }

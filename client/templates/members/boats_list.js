@@ -20,5 +20,5 @@ Template.boatsList.events({
 		console.log("hallo")
 		$("#new-member-popup").modal();
   	}
-})
+});
 

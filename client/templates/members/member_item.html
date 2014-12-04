@@ -1,0 +1,8 @@
+<template name="memberItem">
+    <tr>
+        <td><a href="{{pathFor 'memberPage'}}">{{firstName}} {{lastName}}</a></td>
+        <td>{{#if address}}{{address}},{{/if}} {{postNo}} {{city}}</td>
+        <td>{{phone}}</td>
+        <td>{{email}}</td>
+    </tr>
+</template>

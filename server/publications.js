@@ -8,11 +8,17 @@ Meteor.publish("boats", function(boatId){
 	}
 	
 });
-Meteor.publish("members", function(){
-	return Members.find();
+Meteor.publish("members", function(memberId){
+	if (memberId){
+		return Members.find({_id:memberId});
+	}
+	else{
+		return Members.find();
+	}
+
 });
-Meteor.publish("images", function(){
-	return Images.find();
+Meteor.publish("profilePics", function(){
+	return ProfilePics.find();
 });
 
 Meteor.publish("events", function(){

@@ -21,7 +21,7 @@
 		          <ul class="nav navbar-nav">
 		            <li><a href="{{pathFor 'dashboard'}}">Forside</a></li>
 		            {{#if currentUser}}
-		            	<li><a href="{{pathFor 'boatsList'}}">Medlemmer</a></li>
+		            	<li><a href="{{pathFor 'membersList'}}">Medlemmer</a></li>
 						<li><a href="{{pathFor 'calendar'}}">Kalender</a></li>
 		            {{/if}}
 		            
@@ -32,7 +32,7 @@
 		        </div><!-- /.navbar-collapse -->
 		      </div><!-- /.container-fluid -->
 		    </nav>
-		{{> newBoat}}
+		{{> newMember}}
 	    <div id="main">
 	    	{{>yield}}
 	    </div>
